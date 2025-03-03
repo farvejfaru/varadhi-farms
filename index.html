@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Meta tag for responsive design -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natural And Organic Essentials for a Healthier &amp; Happier You.</title>
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .parent {
+            padding: 0;
+            margin: 0;
+        }
+
+        /* Header Styles */
+        .header {
+            display: block;
+            text-align: center;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .header1 {
+            background-color: rgb(38 106 64);
+            color: white;
+            padding: 3px;
+            font-weight: bold;
+            border-bottom: 0.5px solid white;
+        }
+
+        .header2 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: rgb(248, 192, 39);
+            padding: 10px 20px;
+        }
+
+        .header2_symbol,
+        .header2_menu {
+            display: flex;
+            align-items: center;
+        }
+
+        .header2_logo img {
+            display: block;
+            padding: 20px;
+        }
+
+        .header2 i {
+            margin: 0 10px;
+            font-size: 22px;
+        }
+
+        .header2_menu1 {
+            display: flex;
+            gap: 15px;
+            position: relative;
+        }
+
+        .header2_menu1 a {
+            text-decoration: none;
+            color: black;
+            display: inline-block;
+            padding: 10px 15px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .header2_menu1 a:hover {
+            color: rgba(165, 42, 42, 0.649);
+        }
+
+        /* Dropdown Styling */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            padding: 10px;
+        }
+
+        .dropdown-toggle {
+            font-weight: bold;
+            font-size: medium;
+            cursor: pointer;
+            padding: 10px 15px;
+        }
+
+        .dropdown-toggle:hover {
+            color: rgba(165, 42, 42, 0.649);
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: rgb(247 191 40);
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+            min-width: 200px;
+            z-index: 1000;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-radius: 10px;
+        }
+
+        .dropdown-menu li {
+            padding: 5px;
+            text-align: left;
+            position: relative;
+        }
+
+        .dropdown-menu li:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-menu li a {
+            text-decoration: none;
+            color: black;
+            display: inline-block;
+            font-weight: normal;
+            position: relative;
+        }
+
+        .dropdown-menu li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: rgba(165, 42, 42, 0.649);
+            transition: width 0.3s ease-in-out;
+        }
+
+        .dropdown-menu li a:hover {
+            color: rgba(165, 42, 42, 0.649);
+        }
+
+        .dropdown-menu li a:hover::after {
+            width: 100%;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Banner Styles */
+        .banner img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* Button Styles */
+        .button {
+            display: inline-flex;
+            align-items: center;
+            background-color: #fbc02d;
+            border: none;
+            border-radius: 40px;
+            padding: 20px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            color: black;
+            cursor: pointer;
+            position: relative;
+            text-decoration: none;
+            font-family: "Lora", serif;
+        }
+
+        .button .icon {
+            background-color: rgba(0, 0, 0, 0.2);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 10px;
+        }
+
+        .button .icon::after {
+            content: "›";
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background-color: #f9a825;
+        }
+
+        /* Items Section Styles */
+        .items {
+            margin: 2rem;
+        }
+
+        .items_head {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 3%;
+            margin-top: 3rem;
+            margin-bottom: 2rem;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .items_text h1 {
+            font-size: 48px;
+            font-weight: 700;
+            color: #000;
+            margin: 0;
+        }
+
+        .items_text p {
+            font-size: 16px;
+            font-family: "Lora", serif;
+            color: #000;
+            margin: 32px 0 0;
+        }
+
+        .items_head button {
+            padding: 16px;
+            border-radius: 40px;
+            font-size: 18px;
+            font-weight: bold;
+            background-color: #fbc02d;
+            border: none;
+            cursor: pointer;
+            font-family: "Lora", serif;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .items_head button .icon {
+            background-color: rgba(0, 0, 0, 0.2);
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .items_head button .icon::after {
+            content: "›";
+            font-size: 14px;
+            font-weight: bold;
+            color: #000;
+        }
+
+        .items_head button:hover {
+            background-color: #f9a825;
+        }
+
+        /* Card Styles */
+        .container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            width: 100%;
+            padding: 0 40px;
+            box-sizing: border-box;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: auto;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card h2 {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 16px;
+            color: #1a1a1ab3;
+            font-weight: bold;
+        }
+
+        .old-price {
+            font-size: 14px;
+            color: #777;
+            text-decoration: line-through;
+            margin-left: 10px;
+        }
+
+        .reviews {
+            margin-top: 10px;
+            color: #1a1a1a;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            background: green;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 15px;
+        }
+
+        .btn:hover {
+            background: darkgreen;
+        }
+
+        .view-button {
+            margin-left: 43%;
+        }
+
+        /* Collections Section Styles */
+        .collections {
+            background-color: rgb(38 106 64);
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .explore-text {
+            font-family: "Poppins", sans-serif;
+            font-size: 48px;
+            font-weight: 700;
+            color: white;
+            padding-left: 1.5%;
+        }
+
+        .para {
+            font-size: 16px;
+            font-family: "Lora", serif;
+            color: white;
+            margin: 32px 0 0;
+            padding-left: 1.5%;
+        }
+
+        .explore-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .explore-container img {
+            width: 22rem;
+            border-radius: 10px;
+            margin: 2rem;
+        }
+
+        /* Products Section Styles */
+        .products {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 25px;
+            height: 45rem;
+            margin: 3rem;
+            padding: 1rem;
+        }
+
+        .left-side {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .right-side {
+            height: 100%;
+        }
+
+        .product {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .product img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease-out, filter 0.5s ease-out;
+            transform-origin: center;
+        }
+
+        .product span {
+            position: absolute;
+            bottom: 10px;
+            left: 15px;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .product:hover img {
+            transform: scale(1.1);
+            filter: brightness(85%);
+        }
+
+        /* Banner2 Styles */
+        .banner2 {
+            color: white;
+            background: rgb(38 106 64);
+            padding: 48px;
+            font-size: 24px;
+            font-weight: 800;
+        }
+
+        /* Testimonials Section Styles */
+        .testimonials {
+            padding: 40px;
+            margin: 20px;
+        }
+
+        .testimonial-text {
+            font-size: 50px;
+            font-weight: 700;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .card-outer {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .review-card {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            width: 30%;
+        }
+
+        .review-card p {
+            margin: 5px 0;
+        }
+
+        .review-card h3 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* FAQ Section Styles */
+        .faq-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: rgb(38 106 64);
+            color: black;
+            padding: 90px;
+            font-family: "Lora", serif;
+        }
+
+        .faq-text {
+            max-width: 40%;
+            color: white;
+        }
+
+        .faq-text h2 {
+            font-size: 36px;
+            font-weight: bold;
+            font-family: "Poppins", sans-serif;
+        }
+
+        .faq-box {
+            background-color: #f1b722;
+            padding: 20px;
+            border-radius: 10px;
+            width: 50%;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item span {
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .faq-item svg {
+            background-color: #f1b722;
+            color: black;
+            padding: 7px;
+            border-radius: 50%;
+            transition: 0.3s ease;
+        }
+
+        .faq-item svg:hover {
+            background-color: rgba(0, 0, 0, 0.609);
+            color: white;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #f1b722;
+            padding: 40px;
+            display: flex;
+            justify-content: space-between;
+            color: black;
+            margin-top: 50px;
+        }
+
+        .footer h3 {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin: 5px 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1200px) {
+            .container {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .explore-container img {
+                width: 18rem;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .left-side {
+                grid-template-rows: auto;
+            }
+
+            .right-side {
+                height: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .header2_menu1 {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .header2 {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .header2_menu2 {
+                margin-top: 10px;
+            }
+
+            .explore-container {
+                flex-direction: column;
+            }
+
+            .explore-container img {
+                width: 100%;
+                margin: 1rem 0;
+            }
+
+            .card-outer {
+                flex-direction: column;
+            }
+
+            .review-card {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .faq-section {
+                flex-direction: column;
+                padding: 40px;
+            }
+
+            .faq-text {
+                max-width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .faq-box {
+                width: 100%;
+            }
+
+            .footer {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .items_text h1 {
+                font-size: 36px;
+            }
+
+            .items_text p {
+                font-size: 14px;
+            }
+
+            .items_head button {
+                padding: 10px;
+                font-size: 14px;
+            }
+
+            .explore-text {
+                font-size: 36px;
+            }
+
+            .para {
+                font-size: 14px;
+            }
+
+            .testimonial-text {
+                font-size: 36px;
+            }
+
+            .faq-text h2 {
+                font-size: 24px;
+            }
+
+            .faq-item span {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <!--Header-->
+        <div class="header">
+            <div class="header1">
+                <p>&lt;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; Free Shipping On All Orders Above <i class="fa fa-rupee"></i>999
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &gt;</p>
+            </div>
+            <div class="header2">
+                <div class="header2_logo">
+                    <img src="//vaaradhifarms.com/cdn/shop/files/Asset_1_2x_399eef15-89ca-42cd-ac92-8f75b5e60552.png?v=1685440038&amp;width=1330"
+                        alt=""
+                        srcset="//vaaradhifarms.com/cdn/shop/files/Asset_1_2x_399eef15-89ca-42cd-ac92-8f75b5e60552.png?v=1685440038&amp;width=300 300w, //vaaradhifarms.com/cdn/shop/files/Asset_1_2x_399eef15-89ca-42cd-ac92-8f75b5e60552.png?v=1685440038&amp;width=450 450w"
+                        width="150" height="80" sizes="150px" class="header__logo-image">
+                </div>
+
+                <div class="header2_menu1">
+                    <a href="#">Home</a>
+                    <div class="dropdown">
+                        <span class="dropdown-toggle">View Collections <svg role="presentation" focusable="false"
+                                width="10" height="7" class="icon icon-chevron-bottom" viewBox="0 0 10 7">
+                                <path d="m1 1 4 4 4-4" fill="none" stroke="currentColor" stroke-width="2"></path>
+                            </svg></span>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">Honey</a></li>
+                            <li><a href="#">Ghee</a></li>
+                            <li><a href="#">Pickles</a></li>
+                            <li><a href="#">Seeds</a></li>
+                            <li><a href="#">Sweets & Snacks</a></li>
+                            <li><a href="#">Sweetener & Salts</a></li>
+                            <li><a href="#">Cereals</a></li>
+                            <li><a href="#">Millets</a></li>
+                            <li><a href="#">Oils</a></li>
+                            <li><a href="#">Pulses</a></li>
+                            <li><a href="#">Rice</a></li>
+                        </ul>
+                    </div>
+                    <a href="#">Shop All</a>
+                    <a href="#">FAQ</a>
+                    <a href="#">Track Your Order</a>
+                    <a href="#">Contact US</a>
+                </div>
+
+                <div class="header2_menu2">
+                    <i class="fa fa-search"></i>
+                    <i class="fa fa-user"></i>
+                    <i class="fa fa-shopping-cart"></i>
+                </div>
+            </div>
+        </div>
+        <!--banner-->
+        <div class="banner">
+            <img src="https://vaaradhifarms.com/cdn/shop/files/varadhi_farms_honey_-v1_-_web_final.jpg?v=1733085382&width=3200" alt="Honey_image">
+        </div>
+        <!--items-->
+        <div class="items">
+            <div class="items_head">
+                <div class="items_text">
+                    <h1 class="text_h1">Shop Our Customers Favorite</h1>
+                    <p text_p>These are Our Best Sellers You’ll Fall in Love With Too</p>
+                </div>
+                <button class="button">
+                    View All
+                    <span class="icon"></span>
+                </button>
+            </div>
+
+            <!-- Items -->
+            <div class="card_items">
+                <!-- Card_image1 -->
+                <div class="container">
+                    <div class="card">
+                        <img src="https://vaaradhifarms.com/cdn/shop/files/Ghee_HighRes.jpg?v=1698928244&width=1400"
+                            alt="A2 Desi Cow Cultured Ghee">
+                        <div class="card-content">
+                            <h2>A2 Desi Cow Cultured Ghee</h2>
+                            <p class="price" style="color: rgb(250 58 58);">From Rs. 925.00<span class="old-price">Rs.
+                                    1,000.00</span></p>
+                            <p class="reviews">615 reviews ⭐</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://vaaradhifarms.com/cdn/shop/files/Honey2.png?v=1698854744&width=800"
+                            alt="A2 Desi Cow Cultured Ghee">
+                        <div class="card-content">
+                            <h2>Farm Fresh Raw Natural Honey</h2>
+                            <p class="price">From Rs. 475.00</p>
+                            <p class="reviews">2119 reviews ⭐</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://vaaradhifarms.com/cdn/shop/files/WhatsAppImage2024-03-26at7.23.32PM.jpg?v=1711461650&width=800"
+                            alt="A2 Desi Cow Cultured Ghee">
+                        <div class="card-content">
+                            <h2>Wild Raw Forest Honey</h2>
+                            <p class="price">From Rs. 575.00</p>
+                            <p class="reviews">505 reviews ⭐</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://vaaradhifarms.com/cdn/shop/files/Honey1.png?v=1698854743&width=1400"
+                            alt="A2 Desi Cow Cultured Ghee">
+                        <div class="card-content">
+                            <h2>Small bee forest honey</h2>
+                            <p class="price">Rs. 1,249.00 </p>
+                            <p class="reviews">74 reviews ⭐</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://vaaradhifarms.com/cdn/shop/files/deepixelstudios_wild_turmeric_powder_in_a_pouch_1080x1080_6ffdbe7d-eba2-434a-940f-9d40d1290ee2.png?v=1714064230&width=1000"
+                            alt="A2 Desi Cow Cultured Ghee">
+                        <div class="card-content">
+                            <h2>Forest Turmeric Powder</h2>
+                            <p class="price">Rs. 300.00 </p>
+                            <p class="reviews">18 reviews ⭐</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://vaaradhifarms.com/cdn/shop/files/Adityark_a_bag_of_a_tan_colored_product_filled_with_turmeric_ki_30bdb482-db0c-4404-8b6c-cb59bec40502.png?v=1685016262&width=800"
+                            alt="A2 Desi Cow Cultured Ghee">
+                        <div class="card-content">
+                            <h2>Unprocessed Natural Turmeric</h2>
+                            <p class="price">From Rs. 199.00 </p>
+                            <p class="reviews">341 reviews ⭐</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://vaaradhifarms.com/cdn/shop/files/WhatsApp_Image_2024-09-24_at_11.20.47_PM.jpg?v=1727416947&width=800"
+                            alt="A2 Desi Cow Cultured Ghee">
+                        <div class="card-content">
+                            <h2>Lakshman Phal Juice</h2>
+                            <p class="price">Rs. 780.00 </p>
+                            <p class="reviews">125 reviews ⭐</p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="https://vaaradhifarms.com/cdn/shop/files/42bellampowder.png?v=1730945058&width=800"
+                            alt="A2 Desi Cow Cultured Ghee">
+                        <div class="card-content">
+                            <h2>Jaggery Powder</h2>
+                            <p class="price">Rs. 160.00 </p>
+                            <p class="reviews">17 reviews ⭐</p>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+        <!-- view-products  -->
+        <div class="view-product">
+            <button class="button view-button">
+                View All Products
+            </button>
+        </div>
+
+        <!--Collections-->
+        <div class="collections">
+            <div class="explore">
+                <h2 class="explore-text">Explore Our Collections</h2>
+                <p class="para">Find Your Favorites From Our Wide Range of Categories</p>
+            </div>
+
+            <div class="explore-container">
+                <img src="https://vaaradhifarms.com/cdn/shop/collections/BulldrivenAlmondOil.png?v=1731002452&width=800"
+                    alt="">
+                <img src="https://vaaradhifarms.com/cdn/shop/files/ecommified_Front-facing_close-up_eye-level_shot_of_a_plain_flat_22ecbd0e-a868-400f-851a-1b171609766c.png?v=1732686759&width=800"
+                    alt="">
+                <img src="https://vaaradhifarms.com/cdn/shop/files/pickle_collection_image_-_v1.png?v=1732697129&width=800"
+                    alt="">
+                <img src="https://vaaradhifarms.com/cdn/shop/files/sweet_and_snacks.jpg?v=1732699427&width=800" alt="">
+            </div>
+            <div class="view-product">
+                <button class="button view-button">
+                    View All Collection's
+                </button>
+            </div>
+        </div>
+        <!--products-->
+        <div class="products">
+            <div class="left-side">
+                <div class="product">
+                    <img src="https://vaaradhifarms.com/cdn/shop/files/sweetner_and_salts_collection_image_varadhi_farms.jpg?v=1733114639&width=1600"
+                        alt="Sweetener and Salts">
+                    <span>Sweetener and Salts</span>
+                </div>
+                <div class="product">
+                    <img src="https://vaaradhifarms.com/cdn/shop/files/seeds_collection_image_varadhi_farms-1.jpg?v=1733116981&width=1600"
+                        alt="Seeds">
+                    <span>Seeds</span>
+                </div>
+            </div>
+
+            <!-- Right Side (One Large Image) -->
+            <div class="right-side product">
+                <img src="https://vaaradhifarms.com/cdn/shop/files/Varadhi_farms_v1_oil_section_image-3.jpg?v=1733085809&width=1600"
+                    alt="Oils">
+                <span>Oils</span>
+            </div>
+        </div>
+        <!--banner2-->
+        <div class="banner2">
+            <marquee behavior="scroll" direction="left-side" scrollamount="6">
+                Free Shipping On Orders Above 999
+                &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Free Shipping On Orders Above 999
+                &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                Free Shipping On Orders Above 999
+            </marquee>
+
+        </div>
+        <!--Testimonials-->
+        <div class="testimonials">
+            <h2 class="testimonial-text">Testimonials</h2>
+            <div class="card-outer">
+                <div class="review-card">
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p>Ghee</p>
+                    <h3>Venkateswara Rao</h3>
+                    <p>Cow Ghee, It's really good. When the quality is not compromised, price wouldn't be an issue.</p>
+                </div>
+                <div class="review-card">
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p>Natural Honey</p>
+                    <h3>B.B.</h3>
+                    <p>I just got your natural honey n turmeric, feels good to buy organic n original products.</p>
+                </div>
+                <div class="review-card">
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p>Honey And Turmeric</p>
+                    <h3>Sri Ramudu</h3>
+                    <p>My experience with Vaaradhi Farm's turmeric and honey has been consistently positive.</p>
+                </div>
+            </div>
+        </div>
+        <!--FAQ-->
+        <div class="faq-section">
+            <div class="faq-text">
+                <h2>FAQ</h2>
+                <p>Check out the most common questions our customers asked and if you still have questions, contact our customer support.</p>
+            </div>
+            <div class="faq-box">
+                <div class="faq-item">
+                    <span>How much time does it take for shipping?</span>
+                    <span>
+                        <svg role="presentation" focusable="false" width="15" height="15" viewBox="0 0 8 6">
+                            <path d="m1 1.5 3 3 3-3" fill="none" stroke="black" stroke-width="1"></path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="faq-item">
+                    <span>Do you accept returns and refunds?</span>
+                    <span>
+                        <svg role="presentation" focusable="false" width="15" height="15" viewBox="0 0 8 6">
+                            <path d="m1 1.5 3 3 3-3" fill="none" stroke="black" stroke-width="1"></path>
+                        </svg>
+                    </span>
+                </div>
+                <div class="faq-item">
+                    <span>What payment gateways do you accept?</span>
+                    <span>
+                        <svg role="presentation" focusable="false" width="15" height="15" viewBox="0 0 8 6">
+                            <path d="m1 1.5 3 3 3-3" fill="none" stroke="black" stroke-width="1"></path>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!--footer-->
+        <footer class="footer">
+            <div>
+                <h3>Customer Care</h3>
+                <ul>
+                    <li>FAQ</li>
+                    <li>Shipping Policy</li>
+                    <li>Refund Policy</li>
+                    <li>Cancellation Policy</li>
+                    <li>Privacy Policy</li>
+                    <li>Terms of Service</li>
+                    <li>Contact Information</li>
+                </ul>
+            </div>
+            <div>
+                <h3>Contact Info</h3>
+                <p>Trade Name: VAARADHI FARMS PRIVATE LIMITED</p>
+                <p>Email: vaaradhifarms@gmail.com</p>
+                <p>Customer Care Number: +91 89770 21193, +91 89770 21197</p>
+                <p>Customer Support Timings: 10:30am to 6:30pm</p>
+                <p>Address: Manikonda, Hyderabad, Telangana, Pin - 500089</p>
+                <p>FSSAI: 23623028001252</p>
+                <p>Legal Name: VAARADHI FARMS PRIVATE LIMITED</p>
+                <p>Registered Address: Building No./Flat No.: Sy. No. 81, Plot No-161, Sector-1-Block-2</p>
+                <p>Name Of Premises/Building: Alkapur Township</p>
+                <p>Road/Street: Road No.25</p>
+                <p>Locality/Sub Locality: Neknampur</p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
